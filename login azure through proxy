@@ -1,0 +1,11 @@
+// method 1
+$Username="xxx"
+$Password="yyy"
+[System.Net.WebRequest]::DefaultWebProxy.Credentials =
+>>    New-Object System.Net.NetworkCredential($Username, $Password)
+Login-AzureRmAccount
+
+//method 2
+[System.Net.WebRequest]::DefaultWebProxy.Credentials =
+>>    Get-Credential
+Login-AzureRmAccount
